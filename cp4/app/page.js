@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import Navbar from "./navbar";
+import Navbar from "@/app/components/navbar";
 import Skills from "@/app/skills/page";
 import Portofolio from "@/app/portofolio/page";
 import Layanan from "@/app/layanan/page";
@@ -12,13 +12,15 @@ export default function Hero() {
   return (
     <>
       <Navbar />
+      
+      {/* Section About */}
       <motion.section
+        id="about"
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1 }}
         className="relative flex flex-col items-center text-center bg-gradient-to-r from-white to-yellow-400 text-black py-24 px-6 md:px-12 rounded-b-3xl shadow-lg border-b-4 border-white/30"
       >
-        {/* Foto Profil */}
         <motion.div
           initial={{ scale: 0.5, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
@@ -29,13 +31,12 @@ export default function Hero() {
           <Image
             src="/rifki.jpg"
             alt="Rifki Rahmat Azis"
-            width={200} 
-            height={200} 
+            width={200}
+            height={200}
             className="object-cover w-full h-full rounded-full"
           />
         </motion.div>
 
-        {/* Nama & Profesi */}
         <motion.h1
           initial={{ y: 50, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
@@ -56,7 +57,6 @@ export default function Hero() {
           Web Developer & UI/UX Designer
         </motion.h2>
 
-        {/* Deskripsi Singkat */}
         <motion.p
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -93,10 +93,25 @@ export default function Hero() {
         </div>
       </motion.section>
 
-      <Skills />
-      <Portofolio />
-      <Layanan />
-      <Kontak />
+      {/* Section Skills */}
+      <section id="skills">
+        <Skills />
+      </section>
+
+      {/* Section Portfolio */}
+      <section id="portfolio">
+        <Portofolio />
+      </section>
+
+      {/* Section Layanan */}
+      <section id="layanan">
+        <Layanan />
+      </section>
+
+      {/* Section Kontak */}
+      <section id="kontak">
+        <Kontak />
+      </section>
     </>
   );
 }
