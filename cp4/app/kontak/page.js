@@ -1,14 +1,21 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { FaInstagram, FaTiktok, FaWhatsapp, FaLinkedin, FaEnvelope, FaGithub } from "react-icons/fa";
+import {
+  FaInstagram,
+  FaTiktok,
+  FaWhatsapp,
+  FaLinkedin,
+  FaEnvelope,
+  FaGithub,
+} from "react-icons/fa";
 
 export default function Contact() {
   const contacts = [
     {
       title: "Email",
       detail: "rifkiacil8@gmail.com",
-      icon: <FaEnvelope className="text-yellow-600 text-4xl mx-auto mb-4" />,
+      icon: <FaEnvelope className="text-yellow-500 text-4xl mx-auto mb-4" />,
     },
     {
       title: "Instagram",
@@ -18,7 +25,7 @@ export default function Contact() {
     {
       title: "TikTok",
       detail: "@bintangjauh",
-      icon: <FaTiktok className="text-black text-4xl mx-auto mb-4" />,
+      icon: <FaTiktok className="text-black dark:text-white text-4xl mx-auto mb-4" />,
     },
     {
       title: "WhatsApp",
@@ -33,14 +40,14 @@ export default function Contact() {
     {
       title: "GitHub",
       detail: "github.com/rifki-azis",
-      icon: <FaGithub className="text-gray-900 text-4xl mx-auto mb-4" />,
+      icon: <FaGithub className="text-gray-700 dark:text-gray-300 text-4xl mx-auto mb-4" />,
     },
   ];
 
   return (
     <section
       id="kontak"
-      className="relative bg-gradient-to-r from-white to-yellow-400 text-black py-20 px-6 md:px-12 rounded-t-3xl shadow-lg border-t-4 border-white/20"
+      className="relative bg-background text-foreground py-20 px-6 md:px-12 rounded-t-3xl shadow-lg border-t-4 border-white/10 transition-colors duration-300"
     >
       <div className="container mx-auto text-center">
         <motion.h2
@@ -48,7 +55,7 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
           viewport={{ once: false }}
-          className="text-4xl md:text-5xl font-extrabold tracking-wide text-black drop-shadow-lg mb-6"
+          className="text-4xl md:text-5xl font-extrabold tracking-wide text-yellow-400 drop-shadow-lg mb-6"
         >
           Kontak Saya
         </motion.h2>
@@ -58,7 +65,7 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
           viewport={{ once: false }}
-          className="text-gray-700 text-lg md:text-xl max-w-2xl mx-auto mb-8"
+          className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-8"
         >
           Jangan ragu untuk menghubungi saya melalui media sosial atau email berikut!
         </motion.p>
@@ -71,11 +78,11 @@ export default function Contact() {
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
               viewport={{ once: false }}
-              className="bg-white/30 p-6 rounded-xl shadow-md text-center transition-transform duration-300 hover:scale-105"
+              className="bg-background text-foreground border-2 border-yellow-400 p-6 rounded-xl shadow-md text-center transition-transform duration-300 hover:scale-105 transition-colors"
             >
               {contact.icon}
-              <h3 className="text-xl font-semibold">{contact.title}</h3>
-              <p className="text-gray-700">{contact.detail}</p>
+              <h3 className="text-xl font-semibold text-yellow-400">{contact.title}</h3>
+              <p className="text-muted-foreground">{contact.detail}</p>
             </motion.div>
           ))}
         </div>
