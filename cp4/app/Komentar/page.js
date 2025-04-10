@@ -9,9 +9,12 @@ export default function Komentar() {
   const [comments, setComments] = useState([]);
 
   useEffect(() => {
-    const storedComments = JSON.parse(localStorage.getItem("comments")) || [];
-    setComments(storedComments);
+    if (typeof window !== "undefined") {
+      const storedComments = JSON.parse(localStorage.getItem("comments")) || [];
+      setComments(storedComments);
+    }
   }, []);
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();

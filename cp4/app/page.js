@@ -8,8 +8,8 @@ import Skills from "@/app/skills/page";
 import Portofolio from "@/app/portofolio/page";
 import Layanan from "@/app/layanan/page";
 import Kontak from "@/app/kontak/page";
-import Komentar from "@/app/Komentar/page";
-import Rating from "@/app/Rating/page";
+import Komentar from "@/app/komentar/page";
+import Rating from "@/app/rating/page";
 import Chatbot from "@/app/chatbot/page";
 import ThemeToggle from "@/app/components/themetoggle";
 

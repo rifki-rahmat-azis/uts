@@ -11,16 +11,19 @@ export default function Rating() {
   const [averageRating, setAverageRating] = useState(4.9);
 
   useEffect(() => {
-    const storedRating = localStorage.getItem("userRating");
-    const storedSubmitted = localStorage.getItem("ratingSubmitted");
-    const storedTotalVotes = localStorage.getItem("totalVotes");
-    const storedAverageRating = localStorage.getItem("averageRating");
-
-    if (storedRating) setRating(JSON.parse(storedRating));
-    if (storedSubmitted) setSubmitted(JSON.parse(storedSubmitted));
-    if (storedTotalVotes) setTotalVotes(JSON.parse(storedTotalVotes));
-    if (storedAverageRating) setAverageRating(JSON.parse(storedAverageRating));
+    if (typeof window !== "undefined") {
+      const storedRating = localStorage.getItem("userRating");
+      const storedSubmitted = localStorage.getItem("ratingSubmitted");
+      const storedTotalVotes = localStorage.getItem("totalVotes");
+      const storedAverageRating = localStorage.getItem("averageRating");
+  
+      if (storedRating) setRating(JSON.parse(storedRating));
+      if (storedSubmitted) setSubmitted(JSON.parse(storedSubmitted));
+      if (storedTotalVotes) setTotalVotes(JSON.parse(storedTotalVotes));
+      if (storedAverageRating) setAverageRating(JSON.parse(storedAverageRating));
+    }
   }, []);
+  
 
   const handleClick = (value) => {
     setRating(value);
